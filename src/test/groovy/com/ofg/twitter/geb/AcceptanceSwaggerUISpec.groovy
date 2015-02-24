@@ -1,12 +1,13 @@
 package com.ofg.twitter.geb
 
 import com.ofg.twitter.geb.pages.SwaggerUIHomePage
-import com.ofg.twitter.Application
+import com.ofg.ui.Application
 import geb.spock.GebSpec
 import org.springframework.boot.test.IntegrationTest
 import org.springframework.boot.test.SpringApplicationContextLoader
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.web.WebAppConfiguration
+import spock.lang.Ignore
 import spock.lang.Stepwise
 
 @ContextConfiguration(loader = SpringApplicationContextLoader.class, classes = Application)
@@ -46,6 +47,7 @@ class AcceptanceSwaggerUISpec extends GebSpec {
             showHealthMVCEndpoints.displayed
     }
 
+    @Ignore
     def "Endpoint 'pairid' is visible"() {
         when:
             to SwaggerUIHomePage

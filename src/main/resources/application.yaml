@@ -10,7 +10,7 @@ graphite:
   host: graphite.hackathon.dev.4finance.net
 
 metrics.path:
-  country: pl
+  country: cz
   app: ui-cz
 
 stubrunner.stubs:

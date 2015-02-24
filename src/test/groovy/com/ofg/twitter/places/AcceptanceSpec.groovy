@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.web.servlet.MvcResult
+import spock.lang.Ignore
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse
 import static com.github.tomakehurst.wiremock.client.WireMock.getRequestedFor
@@ -37,6 +38,7 @@ class AcceptanceSpec extends MicroserviceMvcWiremockSpec {
     static final Long PAIR_ID = 1
     static final MediaType TWITTER_PLACES_ANALYZER_MICROSERVICE_V1 = new MediaType('application', 'vnd.com.ofg.twitter-places-analyzer.v1+json')
 
+    @Ignore
     def "should find a place by verifying tweet's geolocation"() {
         given: 'a tweet with a place section filled in'
             String tweet = TWEET_WITH_PLACE
@@ -70,6 +72,7 @@ class AcceptanceSpec extends MicroserviceMvcWiremockSpec {
                                                                         '''))
     }
 
+    @Ignore
     def "should find a place by verifying tweet's coordinates"() {
         given: 'a tweet with a coordinates section filled in'
             String tweet = TWEET_WITH_COORDINATES
