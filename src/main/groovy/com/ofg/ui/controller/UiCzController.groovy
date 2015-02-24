@@ -38,8 +38,6 @@ class UiCzController {
         //call LoanApplicationService - send loan application
         //call LoanApplicationDecisionMaker - poll for decision
         //call MarketingOfferGenerator - poll for offer
-
-        restClient.
         
         return Optional.<String>of(new String("Something will be happening..."))
     }
