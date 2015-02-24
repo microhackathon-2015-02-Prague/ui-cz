@@ -19,7 +19,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST
 @Api(value = "ui", description = "Entry point for clients")
 class UiCzController {
     
-    @Autowired private ServiceRestClient restClient;
+    @Autowired private ServiceRestClient restClient
 
     @RequestMapping(
             value = '/loan/apply/{firstName}/{lastName}/{amount}',
