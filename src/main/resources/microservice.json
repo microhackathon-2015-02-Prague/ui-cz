@@ -4,6 +4,12 @@
         "dependencies": {
             "collerator": {
                 "path": "com/ofg/ui-cz"
+            },
+            "client-service-cz": {
+                "path": "com/ofg/client-service-cz"
+            },
+            "loan-application-service-cz": {
+                "path": "com/ofg/loan-application-service-cz"
             }
         }
     }
