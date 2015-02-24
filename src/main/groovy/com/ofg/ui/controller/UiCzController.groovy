@@ -1,7 +1,10 @@
 package com.ofg.ui.controller
+
+import com.ofg.infrastructure.web.resttemplate.fluent.ServiceRestClient
 import com.wordnik.swagger.annotations.Api
 import com.wordnik.swagger.annotations.ApiOperation
 import groovy.util.logging.Slf4j
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -15,6 +18,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST
 @RequestMapping('/ui')
 @Api(value = "ui", description = "Entry point for clients")
 class UiCzController {
+    
+    @Autowired private ServiceRestClient restClient;
 
     @RequestMapping(
             value = '/loan/apply/{firstName}/{lastName}/{amount}',
@@ -28,6 +33,13 @@ class UiCzController {
                         @PathVariable("amount") @NotNull BigDecimal amount) {
 
         log.info("First Name: ${firstName}, Last Name: ${lastName}, amount: ${amount}")
+        
+        //call ClientService - send client details
+        //call LoanApplicationService - send loan application
+        //call LoanApplicationDecisionMaker - poll for decision
+        //call MarketingOfferGenerator - poll for offer
+
+        restClient.
         
         return Optional.<String>of(new String("Something will be happening..."))
     }

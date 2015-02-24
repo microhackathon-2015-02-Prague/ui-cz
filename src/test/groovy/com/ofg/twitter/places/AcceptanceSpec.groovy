@@ -109,6 +109,7 @@ class AcceptanceSpec extends MicroserviceMvcWiremockSpec {
             wireMock.verifyThat(getRequestedFor(urlMatching('.*')).withHeader(CORRELATION_ID_HEADER, matching(/^(?!\s*$).+/)))
     }
 
+    @Ignore
     // http://api.openweathermap.org/data/2.5/weather?q=London
     def "should try to find a place by cross referencing tweet's user mention with a city index if coordinates/places is not available"() {
         given: 'a tweet with a user mention section filled in (without coordinates)'
@@ -116,12 +117,14 @@ class AcceptanceSpec extends MicroserviceMvcWiremockSpec {
         then: "user's location (place) will be the matching city"
     }
 
+    @Ignore
     def "should try to find a place by cross referencing tweet's hashtags with a city index if no user mention matches"() {
         given: 'a tweet with a hashtag section filled in (without coordinates/places and user mention)'
         when: 'trying to retrieve place from the tweet by cross referencing hash tag with a city index'
         then: "user's location (place) will be the matching city"
     }
 
+    @Ignore
     def "should try to find a place by cross referencing tweet's content with a city index if no user mention matches"() {
         given: 'a tweet without geolocation, places, user mention and hashtag sections'
         when: 'trying to retrieve place from the tweet by cross referencing tweet content with a city index'
